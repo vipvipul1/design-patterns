@@ -14,8 +14,9 @@ public class Client {
         String mode = "Car";
 //        String mode = "Bike";
 //        String mode = "Walk";
-        Map map = new Map();
-        map.setRouteStrategy(getRouteStrategy(mode));
+
+        RouteStrategy routeStrategy = getRouteStrategy(mode);
+        Map map = new Map(routeStrategy);
         String shortedPath = map.getShortestPath(src, dest);
         System.out.println(shortedPath);
     }

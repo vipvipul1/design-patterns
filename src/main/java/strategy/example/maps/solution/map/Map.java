@@ -5,7 +5,7 @@ import strategy.example.maps.solution.strategies.RouteStrategy;
 public class Map {
     private RouteStrategy routeStrategy;
 
-    public void setRouteStrategy(RouteStrategy routeStrategy) {
+    public Map(RouteStrategy routeStrategy) {
         this.routeStrategy = routeStrategy;
     }
 
