@@ -8,10 +8,11 @@ import abstractfactory.example.furniture.sofas.Sofa;
 
 public class Client {
     public static void main(String[] args) {
-        // Changing the factory object (VictorianFactory()/ModernFactory()) only will enable us to create
+        // Only changing the userRequestVariant to "Modern"/"Victorian" will enable us to create
         // products(Sofa/Chair) of different variants(Modern/Victorian).
-        FurnitureAbstractFactory furnitureFactory = new VictorianFactory();
-//        FurnitureAbstractFactory furnitureFactory = new ModernFactory();
+        String userRequestVariant = "Modern";
+//        String userRequestVariant = "Victorian";
+        FurnitureAbstractFactory furnitureFactory = getFurnitureFactory(userRequestVariant);
 
         Chair chair = furnitureFactory.createChair();
         chair.hasHeadRest(2);
@@ -20,5 +21,15 @@ public class Client {
         Sofa sofa = furnitureFactory.createSofa();
         sofa.getMaxSitCount(2);
         sofa.isSleepExtendable(2);
+    }
+
+    public static FurnitureAbstractFactory getFurnitureFactory(String furnitureVariant) {
+        FurnitureAbstractFactory furnitureFactory = null;
+        if ("Modern".equals(furnitureVariant)) {
+            furnitureFactory = new ModernFactory();
+        } else if ("Victorian".equals(furnitureVariant)) {
+            furnitureFactory = new VictorianFactory();
+        }
+        return furnitureFactory;
     }
 }
