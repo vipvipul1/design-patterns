@@ -34,13 +34,13 @@ public class Client {
    Return type of clone() method should be Parent type.
    Create a default and parameterized constructors.
    Parameterized constructor - so that the attributes can be initialized by the child object's parameterized constructor.
-2. Create child classes extending above abstract method and overriding the clone() method.
-   Create a default and parameterized constructors.
-   Parameterized constructor - so that parent class attributes can be initialized this class parameterized constructor.
+2. Create child classes extending above abstract class and overriding the clone() method.
+   Create default and parameterized constructors.
+   Parameterized constructor - so that parent class attributes can be initialized by this class parameterized constructor.
 3. Each child class should override the clone() method by creating new object of it's class which calls
    it's parameterized constructor and then parent's parameterized constructor.
 4. Create a PrototypeRegistry class with a Map<Key,Value> attribute. Key=String, Value=Parent class.
-   It should have 2 methods to register a Key,Value pair and get the Value for any key.
+   It should have 2 methods to register a <Key,Value> pair and get the Value for any key.
 5. Client should create a registerPrototype() method which will register different types of objects of Child classes.
 6. Client can now have a main() method which will create copies of stored prototypes in the registry.
    Call the registry.get(key).clone() to create clone of Parent reference.
